@@ -1,7 +1,29 @@
-﻿
+﻿@model List<SurveyResult>
 @{
     ViewData["Title"] = "SurveyResults";
 }
 
 <h2>Survey Results</h2>
+
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Park Name</th>
+            <th>Survey Count</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var result in Model)
+        {
+
+        <tr>
+            <td><img src="~/images/parks/@(result.ParkCode).jpg" id="surveyimage" /></td>
+            <td>@result.ParkName</td>
+            <td>@result.SurveyCount</td>
+        </tr>
+        }
+    </tbody>
+</table>
 

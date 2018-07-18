@@ -22,7 +22,7 @@ namespace Capstone.Web.DAL
 
             try
             {
-                using (SqlConnection conn = new SqlConnection())
+                using (SqlConnection conn = new SqlConnection(ConnectionString))
                 {
                     conn.Open();
 
