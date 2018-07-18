@@ -1,0 +1,16 @@
+﻿@model Park
+@{
+    ViewData["Title"] = "ParkDetails";
+}
+
+<h2>Park Details</h2>
+<img src="~/images/parks/@(Model.ParkCode).jpg" class="parkimage" />
+
+<h3 class="parkname">@Model.ParkName</h3>
+
+<p class="parkdetails">@Model.ParkDescription</p>
+
+<img class="firstforecast" src="~/images/weather/cloudy.png" />
+
+<img class="secondforecast" src="~/images/weather/rain.png" />
+

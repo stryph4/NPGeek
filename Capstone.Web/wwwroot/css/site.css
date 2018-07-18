@@ -1,7 +1,6 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
 body {
-    padding-top: 50px;
     padding-bottom: 20px;
 }
 
@@ -35,3 +34,86 @@ body {
         display: none;
     }
 }
+
+.topbanner {
+    height: 100px;
+    width: 100%;
+    background-color: forestgreen;
+}
+
+.topbannerlogo {
+    height: 100px;
+}
+
+
+.flexcontainerhome {
+    display: flex;
+    flex-flow: row wrap;
+    width: 1000px;
+    min-width: 1000px;
+}
+
+.homeimagediv {
+    display: inline-block;
+    align-self: flex-start;
+    margin-bottom: -65px;
+    height: 400px;
+    width: 400px;
+}
+
+.homeimage{
+    width: 400px;
+}
+
+.homeparkdesc{
+    padding-top: 0px;
+    display: inline-block;
+    align-self: flex-end;
+    margin-left: 100px;
+    margin-bottom: -65px;
+    height: 400px;
+    width: 400px;
+}
+
+.detailcontainer{
+    display: grid;
+    grid-template-columns: 1fr, 1fr, 1fr, 1fr;
+    grid-template-areas: "parkname"
+                         "parkdetails"
+                         "forecast1, forecast2, forecast3, forecast4, forecast5"                            
+}
+
+.parkimage{
+    width: 100%;
+}
+
+.parkname{
+    font-size: 4rem;
+    grid-area: parkname;
+}
+
+.parkdetails{
+    font-size: 2rem;
+    grid-area: parkdetails;
+}
+
+.firstforecast{
+    grid-area: forecast1;
+}
+
+.secondforecast{
+    grid-area: forecast2;
+}
+
+.thirdforecast{
+    grid-area: forecast3;
+}
+
+.fourthforecast{
+    grid-area: forecast4;
+}
+
+.fifthforecast{
+    grid-area: forecast5;
+}
+
