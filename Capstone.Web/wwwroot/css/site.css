@@ -1,6 +1,8 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
-body {
+.body
+
+{
     padding-bottom: 20px;
 }
 
@@ -53,11 +55,11 @@ body {
     width: 400px;
 }
 
-.homeimage{
+.homeimage {
     width: 400px;
 }
 
-.homeparkdesc{
+.homeparkdesc {
     padding-top: 0px;
     display: inline-block;
     align-self: flex-end;
@@ -67,80 +69,118 @@ body {
     width: 400px;
 }
 
-.detailcontainer{
-    display: grid;
-    width: 100%;
-    grid-template-columns: 1fr, 1fr, 1fr, 1fr 1fr;
-    grid-template-areas: "parkname"
-                         "parkdetails"
-                         "forecast1, forecast2, forecast3, forecast4, forecast5"                            
+.forecastcontainer {
+    display: flex;
+    flex-direction: row;
+    
 }
 
-.parkimage{
+.parkimage {
     width: 100%;
 }
 
-.parkname{
+.parkname {
     font-size: 4rem;
-    grid-area: parkname;
 }
 
-.parkdetails{
+.parkdetails {
     font-size: 2rem;
     grid-area: parkdetails;
 }
 
 .firstforecast {
     display: inline-block;
+    display: flex;
+    align-content: space-between;
+    flex-direction: column;
+    height: 300px;
+    width: 200px;
     margin-left: 20px;
     margin-right: 20px;
-    grid-area: forecast1;
 }
 
 .secondforecast {
     display: inline-block;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    height: 300px;
+    width: 200px;
     margin-left: 20px;
     margin-right: 20px;
-    grid-area: forecast2;
 }
 
 .thirdforecast {
     display: inline-block;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    height: 300px;
+    width: 200px;
     margin-left: 20px;
     margin-right: 20px;
-    grid-area: forecast3;
 }
 
 .fourthforecast {
     display: inline-block;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    height: 300px;
+    width: 200px;
     margin-left: 20px;
     margin-right: 20px;
-    grid-area: forecast4;
 }
 
 .fifthforecast {
     display: inline-block;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    height: 300px;
+    width: 200px;
     margin-left: 20px;
     margin-right: 20px;
-    grid-area: forecast5;
 }
 
-#firstday{
-    margin-top: 0;
+#forecasttext {
+    font-size: 1.4rem;
+    font-weight: initial;
+}
+
+#surveyimage {
+    width: 75px;
+}
+
+#forecastwarning {
+    font-size: .9rem;
+    color: red;
+    font-style: italic;
+}
+
+#firstday {
     width: 200px;
+    align-self: center;
 }
 
-#restofweek{
+#restofweek {
     width: 100px;
+    align-self: center;
 }
 
-#forecasttext{
+#forecasttext {
     font-size: 1.4rem;
     font-weight: initial;
     text-align: center;
 }
 
-#surveyimage{
+#surveyimage {
     width: 75px;
 }
 
+#forecastwarning {
+    font-size: .9rem;
+    color: red;
+    font-style: italic;
+    text-align: center;
+}
