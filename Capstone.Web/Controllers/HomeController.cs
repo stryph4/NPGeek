@@ -25,6 +25,7 @@ namespace Capstone.Web.Controllers
         public IActionResult ParkDetails(string parkCode)
         {
             var park = dal.GetPark(parkCode);
+            park.Forecasts = dal.GetWeatherForecasts(park);
             return View(park);
         }
 

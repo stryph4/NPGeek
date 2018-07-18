@@ -55,6 +55,46 @@ namespace Capstone.Web.DAL
             return GetParks().FirstOrDefault(p => p.ParkCode == parkCode);
         }
 
+        public List<WeatherForecast> GetWeatherForecasts(Park park)
+        {
+            List<WeatherForecast> forecasts = new List<WeatherForecast>();
+
+            try
+            {
+                using(SqlConnection conn = new SqlConnection(ConnectionString))
+                {
+                    conn.Open();
+
+                    string sql = $"SELECT * FROM weather WHERE parkCode = @parkCode";
+
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@parkCode", park.ParkCode);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+
+                    while (reader.Read())
+                    {
+                        WeatherForecast weather = new WeatherForecast();
+                        GetForecastFromRow(reader, weather);
+                        forecasts.Add(weather);
+                    }
+                }
+            }
+            catch(SqlException ex)
+            {
+                throw ex;
+            }
+
+            return forecasts;
+        }
+
+        private static void GetForecastFromRow(SqlDataReader reader, WeatherForecast weather)
+        {
+            weather.Day = Convert.ToInt32(reader["fiveDayForecastValue"]);
+            weather.Low = Convert.ToInt32(reader["low"]);
+            weather.High = Convert.ToInt32(reader["high"]);
+            weather.Forecast = Convert.ToString(reader["forecast"]);
+        }
 
         private static void GetParkFromRow(SqlDataReader reader, Park park)
         {

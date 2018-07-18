@@ -3,14 +3,83 @@
     ViewData["Title"] = "ParkDetails";
 }
 
-<h2>Park Details</h2>
+<h3 class="parkname">@Model.ParkName</h3>
+<p><i>"@Model.InspirationalQuote"</i> -@Model.InspirationalQuoteSource</p>
 <img src="~/images/parks/@(Model.ParkCode).jpg" class="parkimage" />
 
-<h3 class="parkname">@Model.ParkName</h3>
 
-<p class="parkdetails">@Model.ParkDescription</p>
 
-<img class="firstforecast" src="~/images/weather/cloudy.png" />
+<div class="parkdetails" style="min-width: 900px">
+    <p>@Model.ParkDescription</p>
 
-<img class="secondforecast" src="~/images/weather/rain.png" />
+    <ul>
+        <li>Located In: @Model.State</li>
+        <li>Founded In: @Model.YearFounded</li>
+        <li>Climate: @Model.Climate</li>
+        <li>@Model.Acreage Acres in the Park</li>
+        <li>@Model.ElevationInFeet ft. Elevation</li>
+        <li>@Model.MilesOfTrail mi. of Trail</li>
+        <li>@Model.NumberOfCampsites Campsites</li>
+        <li>@Model.AnnualVisitorCount Visitors Each Year</li>
+        <li>@Model.NumberOfAnimalSpecies Species of Animal in the Park</li>
+        <br />
+
+        @if (Model.EntryFee != 0)
+        {
+            <li>@Model.EntryFee.ToString("C") Park Entry Fee</li>
+        }
+    </ul>
+    <div style="width: 100%">
+        @foreach (var forecast in Model.Forecasts)
+        {
+            if (forecast.Day == 1)
+            {
+                <div class="firstforecast">
+                    <img src="~/images/weather/@(forecast.Forecast).png" id="firstday"/>
+                    <br />
+                    <p id="forecasttext">High: @(forecast.High)ºF&emsp;Low: @(forecast.Low)ºF</p>
+                </div>
+
+            }
+            if (forecast.Day == 2)
+            {
+                <div class="secondforecast">
+                    <img src="~/images/weather/@(forecast.Forecast).png" id="restofweek" />
+                    <p id="forecasttext">High: @(forecast.High)ºF</p>
+                    <p id="forecasttext">Low: @(forecast.Low)ºF</p>
+                </div>
+
+            }
+            if (forecast.Day == 3)
+            {
+                <div class="thirdforecast">
+                    <img src="~/images/weather/@(forecast.Forecast).png" id="restofweek" />
+                    <p id="forecasttext">High: @(forecast.High)ºF</p>
+                    <p id="forecasttext">Low: @(forecast.Low)ºF</p>
+                </div>
+
+            }
+            if (forecast.Day == 4)
+            {
+                <div class="fourthforecast">
+                    <img src="~/images/weather/@(forecast.Forecast).png" id="restofweek" />
+                    <p id="forecasttext">High: @(forecast.High)ºF</p>
+                    <p id="forecasttext">Low: @(forecast.Low)ºF</p>
+                </div>
+
+            }
+            if (forecast.Day == 5)
+            {
+                <div class="fifthforecast">
+                    <img src="~/images/weather/@(forecast.Forecast).png" id="restofweek" />
+                    <p id="forecasttext">High: @(forecast.High)ºF</p>
+                    <p id="forecasttext">Low: @(forecast.Low)ºF</p>
+                </div>
+
+            }
+        }
+    </div>
+</div>
+
+
 
