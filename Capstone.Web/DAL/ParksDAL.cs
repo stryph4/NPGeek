@@ -44,7 +44,7 @@ namespace Capstone.Web.DAL
             }
             catch(SqlException ex)
             {
-                throw ex;
+                throw;
             }
 
             return parks;

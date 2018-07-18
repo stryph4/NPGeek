@@ -8,11 +8,12 @@ namespace Capstone.Web.Models
 {
     public class SurveyResult
     {
-        public int SurveyId { get; set; }
         public string ParkCode { get; set; }
+        public string ParkName { get; set; }
         public string EmailAddress { get; set; }
         public string State { get; set; }
         public string ActivityLevel { get; set; }
+        public int SurveyCount { get; set; }
 
 
 
@@ -29,6 +30,14 @@ namespace Capstone.Web.Models
             new SelectListItem() {Text = "Yellowstone National Park", Value = "YNP"},
             new SelectListItem() {Text = "Yosemite National Park", Value = "YNP2"},
             
+        };
+
+        public static List<SelectListItem> activityLevel = new List<SelectListItem>()
+        {
+            new SelectListItem() {Text = "Inactive", Value = "Inactive"},
+            new SelectListItem() {Text = "Sedentary", Value = "Sedentary"},
+            new SelectListItem() {Text = "Active", Value = "Active"},
+            new SelectListItem() {Text = "Extremely Active", Value = "Extremely Active"}
         };
     }
 }
