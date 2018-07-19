@@ -184,3 +184,8 @@ for details on configuring this project to bundle and minify static web assets. 
     font-style: italic;
     text-align: center;
 }
+
+
+#park-survey-table{
+    padding-right: 50px;
+}
