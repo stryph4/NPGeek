@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -10,8 +11,11 @@ namespace Capstone.Web.Models
     {
         public string ParkCode { get; set; }
         public string ParkName { get; set; }
+        [Required(ErrorMessage = "*Email Address is Required")]
         public string EmailAddress { get; set; }
+        [Required(ErrorMessage = "*State of Residence is Required")]
         public string State { get; set; }
+        [Required(ErrorMessage = "*Please Select Your Activity Level")]
         public string ActivityLevel { get; set; }
         public int SurveyCount { get; set; }
 

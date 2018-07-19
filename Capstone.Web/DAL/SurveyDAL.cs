@@ -59,5 +59,31 @@ namespace Capstone.Web.DAL
             result.ParkCode = Convert.ToString(reader["parkCode"]);
             result.SurveyCount = Convert.ToInt32(reader["survey_count"]);
         }
+
+
+        public void SaveNewSurveyResult(SurveyResult surveyResult)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConnectionString))
+                {
+                    conn.Open();
+
+                    string sql = @"INSERT INTO survey_result(parkCode, emailAddress, state, activityLevel) VALUES(@parkCode, @emailAddress, @state, @activityLevel)";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@parkCode", surveyResult.ParkCode);
+                    cmd.Parameters.AddWithValue("@emailAddress", surveyResult.EmailAddress);
+                    cmd.Parameters.AddWithValue("@state", surveyResult.State);
+                    cmd.Parameters.AddWithValue("@activityLevel", surveyResult.ActivityLevel);
+
+                    cmd.ExecuteNonQuery();
+
+                }
+            }
+            catch(SqlException ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

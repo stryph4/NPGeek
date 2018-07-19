@@ -1,7 +1,32 @@
-﻿
+﻿@model SurveyResult
 @{
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h2>Please take a brief survey</h2>
+
+<form asp-controller="survey" asp-action="index" method="post">
+    <div>
+        <label asp-for="ParkCode">Park Name</label>
+        <select asp-for="ParkCode" asp-items="SurveyResult.parks"></select>
+
+    </div>
+    <div>
+        <label asp-for="EmailAddress">Email Address</label>
+        <input asp-for="EmailAddress" />
+        <span asp-validation-for="EmailAddress"></span>
+    </div>
+    <div>
+        <label asp-for="State">State of Residence</label>
+        <input asp-for="State" />
+        <span asp-validation-for="State"></span>
+    </div>
+    <div>
+        <label asp-for="ActivityLevel">What is Your Level of Activity</label>
+        <select asp-for="ActivityLevel" asp-items="SurveyResult.activityLevel"></select>
+        <span asp-validation-for="ActivityLevel"></span>
+    </div>
+    <input type="submit" value="Submit Survey" />
+
+</form>
 
