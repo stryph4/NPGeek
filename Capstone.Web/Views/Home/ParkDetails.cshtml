@@ -2,6 +2,17 @@
 @{
     ViewData["Title"] = "ParkDetails";
 }
+<script src="~/js/site.js"></script>
+<script>
+    function loadWindow() {
+        if (readCookie("temp") == null) {
+            createCookie("temp", "fa");
+        }
+        getPreference();
+
+    }
+    window.onload = loadWindow;
+</script>
 
 <h3 class="parkname">@Model.ParkName</h3>
 <p><i>"@Model.InspirationalQuote"</i> -@Model.InspirationalQuoteSource</p>
@@ -35,7 +46,7 @@
             <div class="firstforecast">
                 <img src="~/images/weather/@(forecast.Forecast).png" id="firstday" />
                 <br />
-                <p id="forecasttext">High: @(forecast.High)ºF&emsp;Low: @(forecast.Low)ºF</p>
+                <p id="forecasttext">High: <label class="temperature">@(forecast.High)</label>&emsp;Low: <label class="temperature">@(forecast.Low)</label></p>
                 @if (forecast.Forecast == "snow")
                 {
                     <p id="forecastwarning">Pack snowshoes</p>
@@ -71,8 +82,8 @@
         {
             <div class="secondforecast">
                 <img src="~/images/weather/@(forecast.Forecast).png" id="restofweek" />
-                <p id="forecasttext">High: @(forecast.High)ºF</p>
-                <p id="forecasttext">Low: @(forecast.Low)ºF</p>
+                <p id="forecasttext">High: <label class="temperature">@(forecast.High)</label></p>
+                <p id="forecasttext">Low: <label class="temperature">@(forecast.Low)</label></p>
                 @if (forecast.Forecast == "snow")
                 {
                     <p id="forecastwarning">Pack snowshoes</p>
@@ -108,8 +119,8 @@
         {
             <div class="thirdforecast">
                 <img src="~/images/weather/@(forecast.Forecast).png" id="restofweek" />
-                <p id="forecasttext">High: @(forecast.High)ºF</p>
-                <p id="forecasttext">Low: @(forecast.Low)ºF</p>
+                <p id="forecasttext">High: <label class="temperature">@(forecast.High)</label></p>
+                <p id="forecasttext">Low: <label class="temperature">@(forecast.Low)</label></p>
                 @if (forecast.Forecast == "snow")
                 {
                     <p id="forecastwarning">Pack snowshoes</p>
@@ -145,8 +156,8 @@
         {
             <div class="fourthforecast">
                 <img src="~/images/weather/@(forecast.Forecast).png" id="restofweek" />
-                <p id="forecasttext">High: @(forecast.High)ºF</p>
-                <p id="forecasttext">Low: @(forecast.Low)ºF</p>
+                <p id="forecasttext">High: <label class="temperature">@(forecast.High)</label></p>
+                <p id="forecasttext">Low: <label class="temperature">@(forecast.Low)</label></p>
                 @if (forecast.Forecast == "snow")
                 {
                     <p id="forecastwarning">Pack snowshoes</p>
@@ -182,8 +193,8 @@
         {
             <div class="fifthforecast">
                 <img src="~/images/weather/@(forecast.Forecast).png" id="restofweek" />
-                <p id="forecasttext">High: @(forecast.High)ºF</p>
-                <p id="forecasttext">Low: @(forecast.Low)ºF</p>
+                <p id="forecasttext">High: <label class="temperature">@(forecast.High)</label></p>
+                <p id="forecasttext">Low: <label class="temperature">@(forecast.Low)</label></p>
                 @if (forecast.Forecast == "snow")
                 {
                     <p id="forecastwarning">Pack snowshoes</p>
@@ -217,6 +228,4 @@
         }
     }
 </div>
-
-
-
+<button type="button" id="preferencebutton" value="Change to Celcius" class="btn btn-info" onclick="setPreference()">Change to Celcius</button>
