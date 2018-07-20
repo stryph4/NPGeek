@@ -2,38 +2,42 @@
 @{
     ViewData["Title"] = "Index";
 }
+<body class="body">
+    <h4 id="survey-header">Please take the time to fill out this brief survey!</h4>
 
-<h2>Please take a brief survey</h2>
+    <div id="survey-table">
+        <form asp-controller="survey" asp-action="index" method="post">
+            <table align="center">
+                <tbody>
+                    <tr>
+                        <td id="park-survey-table"><label asp-for="ParkCode">Park Name</label></td>
+                        <td><select asp-for="ParkCode" asp-items="SurveyResult.parks"></select></td>
 
+                    </tr>
+                    <tr>
+                        <td id="park-survey-table"><label asp-for="EmailAddress">Email Address</label></td>
+                        <td>
+                            <input asp-for="EmailAddress" />
+                            <span asp-validation-for="EmailAddress"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="park-survey-table"><label asp-for="State">State of Residence</label></td>
+                        <td>
+                            <input asp-for="State" />
+                            <span asp-validation-for="State"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="park-survey-table"><label asp-for="ActivityLevel">What is Your Level of Activity</label></td>
+                        <td><select asp-for="ActivityLevel" asp-items="SurveyResult.activityLevel"></select></td>
+                        <td><span asp-validation-for="ActivityLevel"></span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <input type="submit" value="Submit Survey" />
 
-<form asp-controller="survey" asp-action="index" method="post">
-    <table>
-        <tbody>
-            <tr>
-                <td id="park-survey-table"><label asp-for="ParkCode">Park Name</label></td>
-                <td><select asp-for="ParkCode" asp-items="SurveyResult.parks"></select></td>
+        </form>
+    </div>
 
-            </tr>
-            <tr>
-                <td id="park-survey-table"><label asp-for="EmailAddress">Email Address</label></td>
-                <td><input asp-for="EmailAddress" />
-                <span asp-validation-for="EmailAddress"></span></td>
-            </tr>
-            <tr>
-                <td id="park-survey-table"><label asp-for="State">State of Residence</label></td>
-                <td><input asp-for="State" />
-                <span asp-validation-for="State"></span></td>
-            </tr>
-            <tr>
-                <td id="park-survey-table"><label asp-for="ActivityLevel">What is Your Level of Activity</label></td>
-                <td><select asp-for="ActivityLevel" asp-items="SurveyResult.activityLevel"></select></td>
-                <td><span asp-validation-for="ActivityLevel"></span></td>
-            </tr>
-        </tbody>
-    </table>
-    <input type="submit" value="Submit Survey" />
-
-</form>
-
-
-
+</body>

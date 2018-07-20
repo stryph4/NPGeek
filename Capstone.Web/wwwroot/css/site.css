@@ -238,3 +238,14 @@ ul.nav a {
 #preferencebutton {
     font-size: 1.1rem;
 }
+
+#survey-table{
+    background-color: navajowhite;
+    padding: 20px 20px 20px 20px;
+    border-radius: 15px;
+}
+
+#survey-header{
+    text-align:center;
+    color: navajowhite;
+}
