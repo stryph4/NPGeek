@@ -5,38 +5,39 @@
 <body class="body">
     <h4 id="survey-header">Please take the time to fill out this brief survey!</h4>
 
-    <div id="survey-table">
+    <div class="maindiv">
         <form asp-controller="survey" asp-action="index" method="post">
-            <table align="center">
+            <table class="table" id="park-survey-table">
                 <tbody>
                     <tr>
-                        <td id="park-survey-table"><label asp-for="ParkCode">Park Name</label></td>
-                        <td><select asp-for="ParkCode" asp-items="SurveyResult.parks"></select></td>
+                        <td ><label asp-for="ParkCode">Park Name</label></td>
+                        <td><select asp-for="ParkCode" asp-items="SurveyResult.parks" class="form-control" ></select></td>
 
                     </tr>
                     <tr>
-                        <td id="park-survey-table"><label asp-for="EmailAddress">Email Address</label></td>
+                        <td><label asp-for="EmailAddress">Email Address</label></td>
                         <td>
-                            <input asp-for="EmailAddress" />
+                            <input asp-for="EmailAddress" class="form-control"/>
                             <span asp-validation-for="EmailAddress"></span>
                         </td>
                     </tr>
                     <tr>
-                        <td id="park-survey-table"><label asp-for="State">State of Residence</label></td>
+                        <td><label asp-for="State">State of Residence</label></td>
                         <td>
-                            <input asp-for="State" />
+                            <input asp-for="State" class="form-control"/>
                             <span asp-validation-for="State"></span>
                         </td>
                     </tr>
                     <tr>
-                        <td id="park-survey-table"><label asp-for="ActivityLevel">What is Your Level of Activity</label></td>
-                        <td><select asp-for="ActivityLevel" asp-items="SurveyResult.activityLevel"></select></td>
-                        <td><span asp-validation-for="ActivityLevel"></span></td>
+                        <td><label asp-for="ActivityLevel">What is Your Level of Activity</label></td>
+                        <td><select asp-for="ActivityLevel" asp-items="SurveyResult.activityLevel" class="form-control"></select>
+                            <span asp-validation-for="ActivityLevel"></span>
+                        </td>
                     </tr>
                 </tbody>
             </table>
             <div align="center">
-                <input id="survey-button" type="submit" value="Submit Survey" />
+                <input class="btn btn-success" type="submit" value="Submit Survey" />
             </div>
         </form>
     </div>

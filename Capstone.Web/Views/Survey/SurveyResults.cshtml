@@ -3,27 +3,35 @@
     ViewData["Title"] = "SurveyResults";
 }
 
-<h2>Survey Results</h2>
+<body class="body">
+    <div class="maindiv">
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Park Name</th>
+                    <th>Survey Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var result in Model)
+                {
 
+                    <tr>
+                        <td>
+                            <a asp-controller="home" asp-action="parkdetails" asp-route-parkcode="@result.ParkCode">
+                                <img src="~/images/parks/@(result.ParkCode).jpg" id="surveyimage" align="right" />
+                            </a>
+                        </td>
 
-<table class="table table-bordered table-striped">
-    <thead>
-        <tr>
-            <th></th>
-            <th>Park Name</th>
-            <th>Survey Count</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var result in Model)
-        {
+                        <td>@result.ParkName</td>
+                        <td>@result.SurveyCount</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 
-        <tr>
-            <td><img src="~/images/parks/@(result.ParkCode).jpg" id="surveyimage" /></td>
-            <td>@result.ParkName</td>
-            <td>@result.SurveyCount</td>
-        </tr>
-        }
-    </tbody>
-</table>
+</body>
+
 

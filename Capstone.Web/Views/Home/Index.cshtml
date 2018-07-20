@@ -7,17 +7,22 @@
         @foreach (var park in Model)
         {
 
-                <div class="parkdetailscontainer">
-                    <div class="homeimagediv">
+            <div class="parkdetailscontainer">
+                <div class="homeimagediv">
+
+
+                    <div id="parkimage">
                         <a asp-controller="home" asp-action="parkdetails" asp-route-parkcode="@park.ParkCode">
                             <img src="~/images/parks/@(park.ParkCode).jpg" class="homeimage" />
                         </a>
                     </div>
-                    <div class="homeparkdesc">
-                        <h3>@park.ParkName</h3>
-                        <p>@park.ParkDescription</p>
-                    </div>
+
                 </div>
+                <div class="homeparkdesc">
+                    <h3>@park.ParkName</h3>
+                    <p>@park.ParkDescription</p>
+                </div>
+            </div>
 
 
         }
