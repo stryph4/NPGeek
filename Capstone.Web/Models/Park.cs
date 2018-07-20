@@ -37,6 +37,15 @@ namespace Capstone.Web.Models
 
         public int NumberOfAnimalSpecies { get; set; }
 
+        public string ParkURL
+        {
+            get
+            {
+                return ParkName.Replace(" ", "%20");
+
+            }
+        }
+
         public List<WeatherForecast> Forecasts { get; set; }
 
     }
