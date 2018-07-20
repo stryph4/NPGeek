@@ -2,20 +2,25 @@
 @{
     ViewData["Title"] = "National Park Geek";
 }
+<body class="body">
+    <div class="maindiv">
+        @foreach (var park in Model)
+        {
 
-@foreach (var park in Model)
-{
-<div class="flexcontainerhome">
-    <div class="homeimagediv">
-        <a asp-controller="home" asp-action="parkdetails" asp-route-parkcode="@park.ParkCode">
-            <img src="~/images/parks/@(park.ParkCode).jpg" class="homeimage" />
-        </a>
+                <div class="parkdetailscontainer">
+                    <div class="homeimagediv">
+                        <a asp-controller="home" asp-action="parkdetails" asp-route-parkcode="@park.ParkCode">
+                            <img src="~/images/parks/@(park.ParkCode).jpg" class="homeimage" />
+                        </a>
+                    </div>
+                    <div class="homeparkdesc">
+                        <h3>@park.ParkName</h3>
+                        <p>@park.ParkDescription</p>
+                    </div>
+                </div>
+
+
+        }
     </div>
-    <div class="homeparkdesc">
-        <h3>@park.ParkName</h3>
-        <p>@park.ParkDescription</p>
-    </div>
-</div>
+</body>
 
-
-}

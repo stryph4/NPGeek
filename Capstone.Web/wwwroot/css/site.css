@@ -1,9 +1,8 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
-.body
-
-{
+.body {
     padding-bottom: 20px;
+    background-color: forestgreen;
 }
 
 /* Wrapping element */
@@ -29,9 +28,26 @@ for details on configuring this project to bundle and minify static web assets. 
     margin: 15px;
 }
 
+#navbar {
+    width: 1000px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border: groove !important;
+    background-color: navajowhite;
+}
+
+ul.nav a {
+    color: forestgreen !important;
+}
+
+    ul.nav a:hover {
+        color: lightseagreen !important;
+    }
+
 .topbanner {
     height: 100px;
-    width: 100%;
+    width: 1000px;
+    margin: 0 auto;
     background-color: forestgreen;
 }
 
@@ -39,44 +55,61 @@ for details on configuring this project to bundle and minify static web assets. 
     height: 100px;
 }
 
-
-.flexcontainerhome {
-    display: flex;
-    flex-flow: row wrap;
+.maindiv {
     width: 1000px;
-    min-width: 1000px;
+    background-color: navajowhite;
+    padding: 25px;
+    margin: 0 auto;
+    border: groove !important;
+    border-color: black;
+    border-radius: 15px;
+    color: darkgreen;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.parkdetailscontainer {
+    display: flex;
+    flex-direction: row;
+    width: 950px;
+    border-bottom: groove;
+    margin-bottom: 35px;
+}
 .homeimagediv {
     display: inline-block;
     align-self: flex-start;
-    margin-bottom: -65px;
-    height: 400px;
     width: 400px;
 }
 
 .homeimage {
+    border-radius: 25px;
+    margin-bottom: 30px;
     width: 400px;
 }
 
 .homeparkdesc {
-    padding-top: 0px;
     display: inline-block;
     align-self: flex-end;
-    margin-left: 100px;
-    margin-bottom: -65px;
-    height: 400px;
-    width: 400px;
+    width: 450px;
+    margin-bottom: 35px;
+    margin-left: 20px;
+
 }
 
 .forecastcontainer {
+    background-color: white;
+    border-radius: 25px;
     display: flex;
     flex-direction: row;
-    
+    padding: 20px;
+    margin-top: 15px;   
+    margin-bottom: 20px;
 }
 
 .parkimage {
     width: 100%;
+    border-radius: 20%;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .parkname {
@@ -88,13 +121,21 @@ for details on configuring this project to bundle and minify static web assets. 
     grid-area: parkdetails;
 }
 
+.weatherday {
+    color: cornflowerblue;
+    font-weight: bold;
+    text-align: center;
+}
+
 .firstforecast {
+    position: relative;
     display: inline-block;
     display: flex;
     align-content: space-between;
+    border: ridge;
+    border-radius: 15px;
     flex-direction: column;
-    height: 300px;
-    width: 200px;
+    width: 320px;
     margin-left: 20px;
     margin-right: 20px;
 }
@@ -104,6 +145,8 @@ for details on configuring this project to bundle and minify static web assets. 
     display: flex;
     flex-direction: column;
     align-content: space-between;
+    border: ridge;
+    border-radius: 15px;
     height: 300px;
     width: 200px;
     margin-left: 20px;
@@ -115,6 +158,8 @@ for details on configuring this project to bundle and minify static web assets. 
     display: flex;
     flex-direction: column;
     align-content: space-between;
+    border: ridge;
+    border-radius: 15px;
     height: 300px;
     width: 200px;
     margin-left: 20px;
@@ -126,6 +171,8 @@ for details on configuring this project to bundle and minify static web assets. 
     display: flex;
     flex-direction: column;
     align-content: space-between;
+    border: ridge;
+    border-radius: 15px;
     height: 300px;
     width: 200px;
     margin-left: 20px;
@@ -137,6 +184,8 @@ for details on configuring this project to bundle and minify static web assets. 
     display: flex;
     flex-direction: column;
     align-content: space-between;
+    border: ridge;
+    border-radius: 15px;
     height: 300px;
     width: 200px;
     margin-left: 20px;
@@ -148,10 +197,6 @@ for details on configuring this project to bundle and minify static web assets. 
     font-weight: initial;
 }
 
-#surveyimage {
-    width: 75px;
-}
-
 #forecastwarning {
     font-size: .9rem;
     color: red;
@@ -159,7 +204,7 @@ for details on configuring this project to bundle and minify static web assets. 
 }
 
 #firstday {
-    width: 200px;
+    width: 150px;
     align-self: center;
 }
 
@@ -186,6 +231,10 @@ for details on configuring this project to bundle and minify static web assets. 
 }
 
 
-#park-survey-table{
+#park-survey-table {
     padding-right: 50px;
+}
+
+#preferencebutton {
+    font-size: 1.1rem;
 }
