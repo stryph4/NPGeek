@@ -10,26 +10,26 @@
             <table class="table" id="park-survey-table">
                 <tbody>
                     <tr>
-                        <td ><label asp-for="ParkCode">Park Name</label></td>
+                        <td id="survey-row-names"><label asp-for="ParkCode">Park Name</label></td>
                         <td><select asp-for="ParkCode" asp-items="SurveyResult.parks" class="form-control" ></select></td>
 
                     </tr>
                     <tr>
-                        <td><label asp-for="EmailAddress">Email Address</label></td>
+                        <td id="survey-row-names"><label asp-for="EmailAddress">Email Address</label></td>
                         <td>
                             <input asp-for="EmailAddress" class="form-control"/>
                             <span asp-validation-for="EmailAddress"></span>
                         </td>
                     </tr>
                     <tr>
-                        <td><label asp-for="State">State of Residence</label></td>
+                        <td id="survey-row-names"><label asp-for="State">State of Residence</label></td>
                         <td>
                             <input asp-for="State" class="form-control"/>
                             <span asp-validation-for="State"></span>
                         </td>
                     </tr>
                     <tr>
-                        <td><label asp-for="ActivityLevel">What is Your Level of Activity</label></td>
+                        <td id="survey-row-names"><label asp-for="ActivityLevel">What is Your Level of Activity</label></td>
                         <td><select asp-for="ActivityLevel" asp-items="SurveyResult.activityLevel" class="form-control"></select>
                             <span asp-validation-for="ActivityLevel"></span>
                         </td>

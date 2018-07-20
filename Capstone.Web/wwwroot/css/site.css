@@ -1,8 +1,17 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
+﻿@import url('https://fonts.googleapis.com/css?family=Dosis');
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+
+
+
+
+
+
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
 .body {
     padding-bottom: 20px;
     background-color: forestgreen;
+    font-family: Dosis;
 }
 
 /* Wrapping element */
@@ -64,7 +73,8 @@ ul.nav a {
     border-color: black;
     border-radius: 15px;
     color: darkgreen;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Dosis;
+    font-size:large;
 }
 
 .parkdetailscontainer {
@@ -227,7 +237,8 @@ ul.nav a {
 }
 
 #surveyimage {
-    width: 75px;
+    width: 125px;
+    border-radius: 50%;
 }
 
 #forecastwarning {
@@ -263,4 +274,26 @@ td {
 #survey-header {
     text-align: center;
     color: darkseagreen;
+    font-family: Indie Flower;
+    font-size: xx-large;
+    text-shadow: 5px 5px 11px #4a2e10;
+}
+
+#survey-row-names {
+    text-shadow: 3px 3px 7px #876c17;
+    font-family: Indie Flower;
+    font-size: x-large;
+}
+
+#survey-results-header {
+    font-family: Indie Flower;
+    font-size: larger;
+    font-weight: bold;
+    
+}
+
+#indie-flower {
+    font-family: indie flower;
+    font-weight: bold;
+    text-shadow: 5px 5px 11px #4a2e10;
 }
