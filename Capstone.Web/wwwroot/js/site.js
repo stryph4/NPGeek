@@ -32,7 +32,7 @@ function getPreference() {
         }
     }
     if (preference == "fa") {
-        document.getElementById("preferencebutton").innerHTML = "Change to Celcius";
+        document.getElementById("preferencebutton").innerHTML = "Change to Celsius";
 
         var elements = document.getElementsByClassName("temperature");
 
@@ -65,7 +65,7 @@ function setPreference() {
         createCookie("temp", "fa");
 
 
-        document.getElementById("preferencebutton").innerHTML = "Change to Celcius";
+        document.getElementById("preferencebutton").innerHTML = "Change to Celsius";
         var elements = document.getElementsByClassName("temperature");
 
         for (var i = 0; i < elements.length; i++) {
