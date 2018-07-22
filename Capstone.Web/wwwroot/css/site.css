@@ -283,16 +283,15 @@ td {
 
 #survey-header {
     text-align: center;
+    font-family: Dosis;
     color: #ADBCB0;
-    font-family: Indie Flower;
     font-size: 4rem;
-    text-shadow: 5px 5px 11px #4a2e10;
 }
 
 #survey-row-names {
-    text-shadow: 3px 3px 7px #876c17;
-    font-family: Indie Flower;
-    font-size: x-large;
+    font-family: Dosis;
+    text-align: right;
+    font-size: 1.7rem;
 }
 
 #survey-results-header {
