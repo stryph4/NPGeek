@@ -54,14 +54,15 @@ ul.nav a {
     }
 
 .topbanner {
-    height: 100px;
+    height: 300px;
     width: 1000px;
     margin: 0 auto;
+    margin-bottom: 40px;
     background-color: #627D67;
 }
 
 .topbannerlogo {
-    height: 100px;
+    width: 100%;
 }
 
 .maindiv {
