@@ -42,7 +42,6 @@ namespace Capstone.Web.Models
             get
             {
                 return ParkName.Replace(" ", "%20");
-
             }
         }
 
