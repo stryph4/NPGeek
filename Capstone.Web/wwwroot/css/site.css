@@ -37,6 +37,12 @@ for details on configuring this project to bundle and minify static web assets. 
     margin: 15px;
 }
 
+#camper img{
+    height: 600px !important;
+    max-height: 600px !important;
+    width: 100% !important;
+}
+
 #navbar {
     width: 1000px;
     margin: 0 auto;
