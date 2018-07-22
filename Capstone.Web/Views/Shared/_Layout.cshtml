@@ -18,7 +18,7 @@
 </head>
 <body>
     <div class="topbanner">
-        <img src="~/images/natlparks.png" class="topbannerlogo"/>
+        <img src="~/images/natlparks.png" class="topbannerlogo" />
     </div>
     <nav class="navbar navbar-inverse" id="navbar">
         <div class="container">
@@ -36,6 +36,26 @@
                     <li><a asp-area="" asp-controller="Survey" asp-action="Index">Take a Survey</a></li>
                     <li><a asp-area="" asp-controller="Survey" asp-action="SurveyResults">Survey Results</a></li>
                 </ul>
+                <div class="dropdown show">
+                    <a class="btn btn-success dropdown-toggle" id="dropDownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-top: 7px;">
+                        Parks
+                        <i class="caret"></i>
+                    </a>
+                    <div class="dropdown-menu" aria-labeledby="dropDownMenuButton">
+                        <ul>
+                            <li><a asp-controller="Home" asp-action="ParkDetails" asp-route-parkcode="CVNP">Cuyahoga Valley National Park</a></li>
+                            <li><a asp-controller="Home" asp-action="ParkDetails" asp-route-parkcode="ENP">Everglades National Park</a></li>
+                            <li><a asp-controller="Home" asp-action="ParkDetails" asp-route-parkcode="GCNP">Grand Canyon National Park</a></li>
+                            <li><a asp-controller="Home" asp-action="ParkDetails" asp-route-parkcode="GNP">Glacier National Park</a></li>
+                            <li><a asp-controller="Home" asp-action="ParkDetails" asp-route-parkcode="GSMNP">Great Smokey Mountains National Park</a></li>
+                            <li><a asp-controller="Home" asp-action="ParkDetails" asp-route-parkcode="GTNP">Grand Teton National Park</a></li>
+                            <li><a asp-controller="Home" asp-action="ParkDetails" asp-route-parkcode="MRNP">Mount Rainer National Park</a></li>
+                            <li><a asp-controller="Home" asp-action="ParkDetails" asp-route-parkcode="RMNP">Rocky Mountain National Park</a></li>
+                            <li><a asp-controller="Home" asp-action="ParkDetails" asp-route-parkcode="YNP">Yellowstone National Park</a></li>
+                            <li><a asp-controller="Home" asp-action="ParkDetails" asp-route-parkcode="YNP2">Yosemite National Park</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
