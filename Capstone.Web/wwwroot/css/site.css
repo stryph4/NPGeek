@@ -10,7 +10,7 @@
 for details on configuring this project to bundle and minify static web assets. */
 .body {
     padding-bottom: 20px;
-    background-color: forestgreen;
+    background-color: #627D67;
     font-family: Dosis;
 }
 
@@ -42,22 +42,22 @@ for details on configuring this project to bundle and minify static web assets. 
     margin: 0 auto;
     margin-bottom: 20px;
     border: groove !important;
-    background-color: navajowhite;
+    background-color: #46614B;
 }
 
 ul.nav a {
-    color: forestgreen !important;
+    color: #ADBCB0 !important;
 }
 
     ul.nav a:hover {
-        color: lightseagreen !important;
+        color: #0C3313 !important;
     }
 
 .topbanner {
     height: 100px;
     width: 1000px;
     margin: 0 auto;
-    background-color: forestgreen;
+    background-color: #627D67;
 }
 
 .topbannerlogo {
@@ -66,15 +66,15 @@ ul.nav a {
 
 .maindiv {
     width: 1000px;
-    background-color: navajowhite;
+    background-color: #46614B;
     padding: 25px;
     margin: 0 auto;
     border: groove !important;
     border-color: black;
     border-radius: 15px;
-    color: darkgreen;
+    color: #839987;
     font-family: Dosis;
-    font-size:large;
+    font-size: large;
 }
 
 .parkdetailscontainer {
@@ -94,7 +94,7 @@ ul.nav a {
 }
 
     .homeimagediv:hover {
-        box-shadow: 0 0 50px 0 forestgreen;
+        box-shadow: 0 0 50px 0 #27402B;
         border-radius: 20px;
     }
 
@@ -113,7 +113,7 @@ ul.nav a {
 }
 
 .forecastcontainer {
-    background-color: white;
+    background-color: #0662B4;
     border-radius: 25px;
     display: flex;
     flex-direction: row;
@@ -139,15 +139,15 @@ ul.nav a {
 }
 
 .weatherday {
-    color: cornflowerblue;
+    color: #76B5ED;
     font-weight: bold;
     text-align: center;
 }
 
-.temperature{
+.temperature {
     font-weight: bold;
-    color: navy;
-    font-size: 1.4rem;
+    color: #041525;
+    font-size: 1.6rem;
     font-style: italic;
 }
 
@@ -217,15 +217,17 @@ ul.nav a {
 }
 
 #forecasttext {
-    font-size: 1.4rem;
-    color: navy;
-    font-weight: initial;
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: bold;
 }
 
 #forecastwarning {
-    font-size: .9rem;
-    color: red;
-    font-style: italic;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #dc5a58;
+    text-shadow: black;
+    font-weight: bold;
 }
 
 #firstday {
@@ -243,24 +245,9 @@ ul.nav a {
     align-self: center;
 }
 
-
-#forecasttext {
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: navy;
-    text-align: center;
-}
-
 #surveyimage {
     width: 125px;
     border-radius: 50%;
-}
-
-#forecastwarning {
-    font-size: .9rem;
-    color: red;
-    font-style: italic;
-    text-align: center;
 }
 
 
@@ -277,20 +264,21 @@ td {
 }
 
 #preferencebutton {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
+    color: #22223E;
 }
 
 #survey-table {
-    background-color: navajowhite;
+    background-color: ##46614B;
     padding: 20px 20px 20px 20px;
     border-radius: 15px;
 }
 
 #survey-header {
     text-align: center;
-    color: darkseagreen;
+    color: #ADBCB0;
     font-family: Indie Flower;
-    font-size: xx-large;
+    font-size: 4rem;
     text-shadow: 5px 5px 11px #4a2e10;
 }
 
@@ -302,9 +290,8 @@ td {
 
 #survey-results-header {
     font-family: Indie Flower;
-    font-size: larger;
+    font-size: 2rem;
     font-weight: bold;
-    
 }
 
 #indie-flower {
