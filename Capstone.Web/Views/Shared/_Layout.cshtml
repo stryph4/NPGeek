@@ -32,17 +32,17 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Survey" asp-action="Index">Take a Survey</a></li>
-                    <li><a asp-area="" asp-controller="Survey" asp-action="SurveyResults">Survey Results</a></li>
+                    <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a asp-controller="Survey" asp-action="Index">Take a Survey</a></li>
+                    <li><a asp-controller="Survey" asp-action="SurveyResults">Survey Results</a></li>
                 </ul>
-                <div class="dropdown show">
-                    <a class="btn btn-success dropdown-toggle" id="dropDownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-top: 7px;">
+                <div class="dropdown show" style="height: 13px; margin-top: 7px;">
+                    <a class="btn btn-success dropdown-toggle" id="dropDownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Parks
                         <i class="caret"></i>
                     </a>
                     <div class="dropdown-menu" aria-labeledby="dropDownMenuButton">
-                        <ul>
+                        <ul style="list-style-type: none;">
                             <li><a asp-controller="Home" asp-action="ParkDetails" asp-route-parkcode="CVNP">Cuyahoga Valley National Park</a></li>
                             <li><a asp-controller="Home" asp-action="ParkDetails" asp-route-parkcode="ENP">Everglades National Park</a></li>
                             <li><a asp-controller="Home" asp-action="ParkDetails" asp-route-parkcode="GCNP">Grand Canyon National Park</a></li>
