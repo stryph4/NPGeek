@@ -51,6 +51,10 @@ for details on configuring this project to bundle and minify static web assets. 
     background-color: #46614B;
 }
 
+.dropdown:hover {
+    display: block;
+}
+
 ul.nav a {
     color: #ADBCB0 !important;
 }

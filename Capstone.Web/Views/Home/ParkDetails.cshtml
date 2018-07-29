@@ -2,17 +2,6 @@
 @{
     ViewData["Title"] = "ParkDetails";
 }
-<script src="~/js/site.js"></script>
-<script>
-    function loadWindow() {
-        if (readCookie("temp") == null) {
-            createCookie("temp", "fa");
-        }
-        getPreference();
-
-    }
-    window.onload = loadWindow;
-</script>
 <body class="body">
     <div class="maindiv">
         <h3 id="indie-flower" class="parkname" align="center">@Model.ParkName</h3>
@@ -42,6 +31,17 @@
             <button type="button" id="preferencebutton" value="Change to Celsius" class="btn btn-success" style="color: black;" onclick="setPreference()">Change to Celcius</button>
         </div>
         <div class="forecastcontainer">
+            <script src="~/js/site.js"></script>
+            <script>
+                function loadWindow() {
+                    if (readCookie("temp") == null) {
+                        createCookie("temp", "fa");
+                    }
+                    getPreference();
+
+                }
+                window.onload = loadWindow;
+            </script>
             @foreach (var forecast in Model.Forecasts)
             {
                 if (forecast.Day == 1)
