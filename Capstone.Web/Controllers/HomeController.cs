@@ -19,6 +19,11 @@ namespace Capstone.Web.Controllers
         public IActionResult Index()
         {
             var parks = _parksDAL.GetParks();
+            if (parks == null)
+
+            {
+                return NotFound();
+            }
 
             return View(parks);
         }
@@ -26,8 +31,15 @@ namespace Capstone.Web.Controllers
         public IActionResult ParkDetails(string parkCode)
         {
             var park = _parksDAL.GetPark(parkCode);
+
+            if (park == null)
+            {
+                return NotFound();
+            }
+
             park.Forecasts = _parksDAL.GetWeatherForecasts(park);
-            return View(park);
+
+            return park.Forecasts == null ? Error() : View(park);
         }
 
       

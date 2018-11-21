@@ -41,9 +41,9 @@ namespace Capstone.Web.DAL
                     }
                 }
             }
-            catch(SqlException ex)
+            catch
             {
-                throw ex;
+                return null;
             }
 
             return parks;
@@ -79,9 +79,9 @@ namespace Capstone.Web.DAL
                     }
                 }
             }
-            catch(SqlException ex)
+            catch
             {
-                throw ex;
+                return null;
             }
 
             return forecasts;
