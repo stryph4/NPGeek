@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Capstone.Web.Models;
 
 namespace Capstone.Web.DAL
@@ -10,5 +7,8 @@ namespace Capstone.Web.DAL
     {
         IList<Park> GetParks();
 
+        Park GetPark(string parkCode);
+
+        List<WeatherForecast> GetWeatherForecasts(Park park);
     }
 }
