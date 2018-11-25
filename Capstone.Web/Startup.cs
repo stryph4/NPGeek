@@ -30,6 +30,7 @@ namespace Capstone.Web
             
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddTransient<IParksDAL, ParksDAL>(x => new ParksDAL(@"Data Source=.\SQLEXPRESS;Initial Catalog=NPGeek;Integrated Security=True"));
+            services.AddTransient<ISurveyDAL, SurveyDAL>(x => new SurveyDAL(@"Data Source=.\SQLEXPRESS;Initial Catalog=NPGeek;Integrated Security=True"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Threading.Tasks;
 using Capstone.Web.Models;
 
 namespace Capstone.Web.DAL
@@ -16,6 +14,10 @@ namespace Capstone.Web.DAL
             ConnectionString = connectionString;
         }
 
+        /// <summary>
+        /// Gets the survey results.
+        /// </summary>
+        /// <returns></returns>
         public IList<SurveyResult> GetSurveyResults()
         {
             IList<SurveyResult> results = new List<SurveyResult>();
@@ -32,12 +34,12 @@ namespace Capstone.Web.DAL
                                     HAVING COUNT(survey_result.parkCode) > 0
                                     ORDER BY COUNT(survey_result.parkCode) DESC";
 
-                    SqlCommand cmd = new SqlCommand(sql, conn);
-                    SqlDataReader reader = cmd.ExecuteReader();
+                    var cmd = new SqlCommand(sql, conn);
+                    var reader = cmd.ExecuteReader();
 
                     while (reader.Read())
                     {
-                        SurveyResult result = new SurveyResult();
+                        var result = new SurveyResult();
 
                         GetResultFromRow(reader, result);
 
@@ -45,22 +47,31 @@ namespace Capstone.Web.DAL
                     }
                 }
             }
-            catch (SqlException ex)
+            catch
             {
-                throw;
+                return null;
             }
 
             return results;
         }
 
+        /// <summary>
+        /// Gets the result from row.
+        /// </summary>
+        /// <param name="reader">The reader.</param>
+        /// <param name="result">The result.</param>
         private static void GetResultFromRow(SqlDataReader reader, SurveyResult result)
         {
             result.ParkName = Convert.ToString(reader["parkName"]);
             result.ParkCode = Convert.ToString(reader["parkCode"]);
             result.SurveyCount = Convert.ToInt32(reader["survey_count"]);
+            
         }
 
-
+        /// <summary>
+        /// Saves the new survey result.
+        /// </summary>
+        /// <param name="surveyResult">The survey result.</param>
         public void SaveNewSurveyResult(SurveyResult surveyResult)
         {
             try

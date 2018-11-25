@@ -9,13 +9,17 @@ namespace Capstone.Web.DAL
     public class ParksDAL : IParksDAL
     {
 
-        public string ConnectionString { get; set; }
+        private string ConnectionString { get; set; }
 
         public ParksDAL(string connectionString)
         {
             ConnectionString = connectionString;
         }
 
+        /// <summary>
+        /// Gets the parks.
+        /// </summary>
+        /// <returns></returns>
         public IList<Park> GetParks()
         {
             IList<Park> parks = new List<Park>();
@@ -49,11 +53,21 @@ namespace Capstone.Web.DAL
             return parks;
         }
 
+        /// <summary>
+        /// Gets the park.
+        /// </summary>
+        /// <param name="parkCode">The park code.</param>
+        /// <returns></returns>
         public Park GetPark(string parkCode)
         {
             return GetParks().FirstOrDefault(p => p.ParkCode == parkCode);
         }
 
+        /// <summary>
+        /// Gets the weather forecasts.
+        /// </summary>
+        /// <param name="park">The park.</param>
+        /// <returns></returns>
         public List<WeatherForecast> GetWeatherForecasts(Park park)
         {
             List<WeatherForecast> forecasts = new List<WeatherForecast>();
@@ -87,6 +101,11 @@ namespace Capstone.Web.DAL
             return forecasts;
         }
 
+        /// <summary>
+        /// Gets the forecast from row.
+        /// </summary>
+        /// <param name="reader">The reader.</param>
+        /// <param name="weather">The weather.</param>
         private static void GetForecastFromRow(SqlDataReader reader, WeatherForecast weather)
         {
             weather.Day = Convert.ToInt32(reader["fiveDayForecastValue"]);
@@ -95,6 +114,11 @@ namespace Capstone.Web.DAL
             weather.Forecast = Convert.ToString(reader["forecast"]);
         }
 
+        /// <summary>
+        /// Gets the park from row.
+        /// </summary>
+        /// <param name="reader">The reader.</param>
+        /// <param name="park">The park.</param>
         private static void GetParkFromRow(SqlDataReader reader, Park park)
         {
             park.ParkCode = Convert.ToString(reader["parkCode"]);

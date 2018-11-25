@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Capstone.Web.DAL;
+﻿using Capstone.Web.DAL;
 using Capstone.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,8 +6,12 @@ namespace Capstone.Web.Controllers
 {
     public class SurveyController : Controller
     {
+        private ISurveyDAL _dal;
 
-        SurveyDAL dal = new SurveyDAL(@"Data Source=.\SQLEXPRESS;Initial Catalog=NPGeek;Integrated Security=True");
+        public SurveyController(ISurveyDAL dal)
+        {
+            _dal = dal;
+        }
 
 
         [HttpGet]
@@ -24,19 +24,14 @@ namespace Capstone.Web.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Index(SurveyResult surveyResult)
         {
-            if (ModelState.IsValid)
-            {
-                dal.SaveNewSurveyResult(surveyResult);
-                
-
-                return RedirectToAction("surveyresults");
-            }
-            return View("index");
+            if (!ModelState.IsValid) return BadRequest("An error has occured while processing your request.");
+            _dal.SaveNewSurveyResult(surveyResult);
+            return RedirectToAction("surveyresults");
         }
 
         public IActionResult SurveyResults()
         {
-            var results = dal.GetSurveyResults();
+            var results = _dal.GetSurveyResults();
             return View(results);
         }
 
